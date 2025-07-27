@@ -1,0 +1,150 @@
+{
+  "doctors": [
+    {
+      "id": "1",
+      "name": "Dr. Sarah Johnson",
+      "email": "sarah@example.com",
+      "password": "password123",
+      "phone": "+1-555-0101",
+      "specialty": "Cardiology",
+      "qualifications": "MD, FACC",
+      "experience": "15 years",
+      "clinicAddress": "Heart Care Center, 123 Medical Plaza, New York",
+      "rating": 4.8,
+      "reviewCount": 156,
+      "consultationFee": 150,
+      "videoConsultationFee": 100,
+      "availability": {
+        "clinic": [
+          "Monday",
+          "Wednesday",
+          "Friday"
+        ],
+        "online": [
+          "Tuesday",
+          "Thursday",
+          "Saturday"
+        ]
+      },
+      "timeSlots": [
+        "09:00",
+        "10:00",
+        "11:00",
+        "14:00",
+        "15:00",
+        "16:00"
+      ],
+      "image": "/placeholder.svg?height=200&width=200",
+      "about": "Experienced cardiologist specializing in heart disease prevention and treatment.",
+      "consultationType": [
+        "clinic",
+        "video",
+        "call"
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Dr. Michael Chen",
+      "email": "michael@example.com",
+      "password": "password123",
+      "phone": "+1-555-0102",
+      "specialty": "Dermatology",
+      "qualifications": "MD, FAAD",
+      "experience": "12 years",
+      "clinicAddress": "Skin Care Clinic, 456 Health Street, Los Angeles",
+      "rating": 4.9,
+      "reviewCount": 203,
+      "consultationFee": 120,
+      "videoConsultationFee": 80,
+      "availability": {
+        "clinic": [
+          "Monday",
+          "Tuesday",
+          "Thursday"
+        ],
+        "online": [
+          "Wednesday",
+          "Friday",
+          "Saturday"
+        ]
+      },
+      "timeSlots": [
+        "08:00",
+        "09:00",
+        "10:00",
+        "13:00",
+        "14:00",
+        "15:00"
+      ],
+      "image": "/placeholder.svg?height=200&width=200",
+      "about": "Board-certified dermatologist with expertise in skin conditions and cosmetic procedures.",
+      "consultationType": [
+        "clinic",
+        "video",
+        "call"
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Dr. Emily Rodriguez",
+      "email": "emily.rodriguez@example.com",
+      "password": "password123",
+      "phone": "+1-555-0103",
+      "specialty": "Neurology",
+      "qualifications": "MD, PhD",
+      "experience": "18 years",
+      "clinicAddress": "Neuro Center, 789 Brain Avenue, Chicago",
+      "rating": 4.7,
+      "reviewCount": 134,
+      "consultationFee": 200,
+      "videoConsultationFee": 150,
+      "availability": {
+        "clinic": [
+          "Tuesday",
+          "Wednesday",
+          "Friday"
+        ],
+        "online": [
+          "Monday",
+          "Thursday",
+          "Saturday"
+        ]
+      },
+      "timeSlots": [
+        "09:00",
+        "10:00",
+        "11:00",
+        "14:00",
+        "15:00"
+      ],
+      "image": "/placeholder.svg?height=200&width=200",
+      "about": "Neurologist specializing in brain disorders and neurological conditions.",
+      "consultationType": [
+        "clinic",
+        "video"
+      ]
+    }
+  ],
+  "patients": [
+    {
+      "id": "1",
+      "name": "John Doe",
+      "email": "john@example.com",
+      "password": "password123",
+      "phone": "+1-555-1001"
+    }
+  ],
+  "appointments": [
+    {
+      "id": "1753539714748",
+      "doctorId": "2",
+      "patientId": "1",
+      "doctorName": "Dr. Michael Chen",
+      "patientName": "John Doe",
+      "specialty": "Dermatology",
+      "date": "2025-07-26",
+      "time": "10:00",
+      "status": "pending"
+    }
+  ]
+}
