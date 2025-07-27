@@ -143,52 +143,48 @@ export default function BookingPage() {
   const handlePayment = async () => {
     if (!doctor || !user) return
 
-    setBookingStage(0)
-
     try {
-      // Process each booking stage with proper timing to prevent React state update issues
-      const processStages = async () => {
-        // Process first stage - Checking Availability
-        await new Promise(resolve => setTimeout(resolve, bookingStages[0].duration));
-        setBookingStage(1);
-        
-        // Process second stage - Verifying Connection
-        await new Promise(resolve => setTimeout(resolve, bookingStages[1].duration));
-        setBookingStage(2);
-        
-        // Process third stage - Processing Payment
-        await new Promise(resolve => setTimeout(resolve, bookingStages[2].duration));
-        setBookingStage(3);
-        
-        // Process fourth stage - Confirming Booking
-        await new Promise(resolve => setTimeout(resolve, bookingStages[3].duration));
-        
-        // Create the appointment data
-        const appointment = {
-          doctorId: doctor.id,
-          patientId: user.id,
-          doctorName: doctor.name,
-          patientName: user.name,
-          specialty: doctor.specialty,
-          date: selectedDate,
-          time: selectedTime,
-          status: "confirmed" as const,
-          consultationType,
-          symptoms,
-          fee: getConsultationFee(),
-        };
-        
-        await appointmentsAPI.create(appointment);
-        
-        setBookingComplete(true);
-        toast({
-          title: "Success! 🎉",
-          description: "Appointment booked successfully!",
-        });
-      };
+      // Start from stage 0
+      setBookingStage(0)
       
-      // Start the stages processing
-      processStages();
+      // Stage 0: Checking Availability
+      await new Promise(resolve => setTimeout(resolve, 1500))
+      setBookingStage(1)
+      
+      // Stage 1: Verifying Connection
+      await new Promise(resolve => setTimeout(resolve, 1200))
+      setBookingStage(2)
+      
+      // Stage 2: Processing Payment
+      await new Promise(resolve => setTimeout(resolve, 1000))
+      setBookingStage(3)
+      
+      // Stage 3: Confirming Booking
+      await new Promise(resolve => setTimeout(resolve, 1500))
+      
+      // Create the appointment
+      const appointment = {
+        doctorId: doctor.id,
+        patientId: user.id,
+        doctorName: doctor.name,
+        patientName: user.name,
+        specialty: doctor.specialty,
+        date: selectedDate,
+        time: selectedTime,
+        status: "confirmed" as const,
+        consultationType,
+        symptoms,
+        fee: getConsultationFee(),
+      }
+      
+      await appointmentsAPI.create(appointment)
+      
+      // Complete the booking
+      setBookingComplete(true)
+      toast({
+        title: "Success! 🎉",
+        description: "Appointment booked successfully!",
+      })
     } catch (error) {
       toast({
         title: "Error",
